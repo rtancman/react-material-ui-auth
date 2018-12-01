@@ -1,0 +1,2 @@
+export const AUTH_CREATE_USER = 'AUTH_CREATE_USER'
+export const AUTH_LOGIN_USER = 'AUTH_LOGIN_USER'

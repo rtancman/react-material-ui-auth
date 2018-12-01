@@ -1,0 +1,5 @@
+{
+    "jest.showCoverageOnLoad": true,
+    "jest.pathToJest": "yarn test",
+    "terminal.integrated.shell.linux": "/bin/bash"
+}
