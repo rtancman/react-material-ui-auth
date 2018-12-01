@@ -1,0 +1,16 @@
+{
+  "name": "json-server-api",
+  "version": "1.0.0",
+  "description": "Simple Fake API",
+  "main": "main.js",
+  "scripts": {
+    "start": "json-server --watch ./database.json",
+    "start-auth": "node server.js"
+  },
+  "author": "https://github.com/techiediaries",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.14.0",
+    "jsonwebtoken": "^8.4.0"
+  }
+}

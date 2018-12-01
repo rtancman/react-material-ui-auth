@@ -1,0 +1,6 @@
+{
+  "notifications": [{
+    "id": 1,
+    "message": "Test 1 notify"
+  }]
+}
