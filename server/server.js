@@ -30,6 +30,13 @@ function isAuthenticated({
   return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
 }
 
+function getUserByEmail(email) {
+  let user = Object.assign({}, userdb.users.filter(user => user.email === email)[0])
+  delete user.password
+
+  return user
+}
+
 function checkExistsEmail(email) {
   return userdb.users.findIndex(user => user.email === email) !== -1
 }
@@ -51,12 +58,16 @@ server.post('/auth/signin', (req, res) => {
     })
     return
   }
+
   const access_token = createToken({
     email,
-    password
   })
+
+  const user = getUserByEmail(email)
+
   res.status(200).json({
-    access_token
+    access_token,
+    ...user,
   })
 })
 

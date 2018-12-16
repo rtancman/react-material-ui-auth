@@ -1,22 +1,25 @@
 {
     "users": [
       {
-        "id": 1,
+        "id": "3c35dbd8-f4eb-11e8-adde-fcaa142a9210",
         "name": "lala",
         "email": "lala@email.com",
-        "password": "lala1234"
+        "password": "lala1234",
+        "created_at": 1467166872634
       },
       {
-        "id": 2,
+        "id": "bbc19dee-0169-11e9-a5b4-1866dafe6ab0",
         "name": "lele",
         "email": "lele@email.com",
-        "password": "lele1234"
+        "password": "lele1234",
+        "created_at": 1467166872634
       },
       {
-        "id": 3,
+        "id": "c226945a-0169-11e9-86e7-1866dafe6ab0",
         "name": "lili",
         "email": "lili@email.com",
-        "password": "lili1234"
+        "password": "lili1234",
+        "created_at": 1467166872634
       }
     ]
   }
