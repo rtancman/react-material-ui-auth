@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
-import uuidv4 from 'uuid/v4'
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
@@ -10,22 +9,16 @@ class SignInForm extends Component {
   static propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
-    id: PropTypes.string,
-    timestamp: Date.now(),
-    username: '',
+    username: PropTypes.string,
   }
 
   state = {
-    id: this.props.id || uuidv4(),
-    timestamp: this.props.timestamp || Date.now(),
     username: this.props.username || '',
     password: '',
   }
 
   reset() {
     this.setState((state) => ({
-      id: this.props.id || uuidv4(),
-      timestamp: Date.now(),
       username: '',
       password: '',
     }))

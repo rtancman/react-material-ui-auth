@@ -1,5 +1,5 @@
 import * as types from './constants/ActionTypes'
-import { headers, listCategoriesUrl, categoryPostsUrl } from './api';
+import { headers, routes } from './api';
 
 export const createUser = (user) => {
   return {
@@ -8,15 +8,26 @@ export const createUser = (user) => {
   }
 }
 
-export function createUserFetchData() {
+export const signInUser = (user) => {
+  return {
+      type: types.AUTH_SIGNIN_USER,
+      user,
+  }
+}
+
+export function signInFetchData(username, password) {
   return dispatch => {
-    return fetch(listCategoriesUrl, { headers })
-      .then(res => res.json())
-      .then(body => {
-        dispatch(receiveCategories(body))
-        return new Promise(function(resolve) {
-          resolve(body);
-        })
+    return fetch(routes.signIn, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({email: username, password})
+    })
+    .then(res => res.json())
+    .then(body => {
+      dispatch(signInUser(body))
+      return new Promise(function(resolve) {
+        resolve(body)
       })
+    })
   }
 }

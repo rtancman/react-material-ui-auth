@@ -12,10 +12,10 @@ class App extends Component {
         <Route exact path='/' render={(props) => (
           <Home {...props} />
         )}/>
-        <Route exact path='/sign-in' render={(props) => (
+        <Route exact path='/login' render={(props) => (
           <SignIn {...props} />
         )}/>
-        <Route exact path='/sign-up' render={(props) => (
+        <Route exact path='/signup' render={(props) => (
           <SignUp {...props} />
         )}/>
       </Switch>
