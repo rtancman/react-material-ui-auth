@@ -1,5 +1,5 @@
 import * as types from './constants/ActionTypes'
-import { headers, routes } from './api';
+import { headers, routes } from './core/api';
 
 export const createUser = (user) => {
   return {
@@ -29,5 +29,17 @@ export function signInFetchData(username, password) {
         resolve(body)
       })
     })
+  }
+}
+
+export const authLogoutUser = () => {
+  return {
+      type: types.AUTH_LOGOUT_USER
+  }
+}
+
+export function logout(username, password) {
+  return dispatch => {
+    dispatch(authLogoutUser())
   }
 }

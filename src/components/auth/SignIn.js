@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import SignInForm from './SignInForm'
 import { signInFetchData } from './actions'
 
-
 class SignIn extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,

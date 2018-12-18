@@ -7,6 +7,8 @@ export const auth = (state = initialUserState, action) => {
       return Object.assign({}, state, action.user)
     case types.AUTH_SIGNIN_USER:
       return Object.assign({}, state, action.user)
+    case types.AUTH_LOGOUT_USER:
+      return initialUserState
     default:
         return state;
   }
