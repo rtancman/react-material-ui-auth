@@ -2,6 +2,7 @@ const fs = require('fs')
 const bodyParser = require('body-parser')
 const jsonServer = require('json-server')
 const jwt = require('jsonwebtoken')
+const uuidv4 = require('uuid/v4');
 
 const server = jsonServer.create()
 const router = jsonServer.router('./database.json')
@@ -104,7 +105,9 @@ server.post('/auth/signup', (req, res) => {
   res.status(200).json({
     email,
     name,
-    access_token
+    access_token,
+    id: uuidv4(),
+    timestamp: Date.now(),
   })
 })
 

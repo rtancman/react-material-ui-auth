@@ -43,3 +43,25 @@ export function logout(username, password) {
     dispatch(authLogoutUser())
   }
 }
+
+export function signUp(user) {
+  return dispatch => {
+    return fetch(routes.signUp, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(user)
+    })
+    .then(res => {
+      if (res.ok) return res.json()
+      return new Promise(function(_, reject) {
+        reject(res)
+      })
+    })
+    .then(body => {
+      dispatch(signInUser(body))
+      return new Promise(function(resolve) {
+        resolve(body)
+      })
+    })
+  }
+}

@@ -22,6 +22,7 @@ export const headers = {
 export const routes = {
   signIn: `${baseApi}/signin`,
   session: `${baseApi}/session`,
+  signUp: `${baseApi}/signup`,
 } 
 
 export const sessionAuth = {
