@@ -2,26 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from "prop-types";
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
-
-
-
-const AuthMenu = ({ auth = {} }) => {
-  if ( auth.id ) {
-    return (
-      <div>
-        <p>{auth.name}</p>
-        <p>{auth.email}</p>
-        <Link to='/logout'>logout</Link>
-      </div>
-    )
-  }
-  return (
-    <div>
-      <Link to='/login'>login</Link>
-      <Link to='/signup'>sign up</Link>
-    </div>
-  )
-}
+import UserBar from '../auth/UserBar'
 
 class Home extends Component {
   static propTypes = {
@@ -33,8 +14,8 @@ class Home extends Component {
 
     return (
       <div>
+        <UserBar auth={auth} />
         <h1>Home page</h1>
-        <AuthMenu auth={auth} />
       </div>
     )
   }
