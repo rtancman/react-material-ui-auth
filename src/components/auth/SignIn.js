@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types";
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SignInForm from './SignInForm'
+import Avatar from '@material-ui/core/Avatar';
+import LockIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import SignInForm from './form/SignInForm'
 import { signInFetchData } from './actions'
+import BoxCenter from './UI/box/Center'
 
 class SignIn extends Component {
   static propTypes = {
@@ -46,10 +50,19 @@ class SignIn extends Component {
     const { isFetching } = this.state
 
     return (
-      <SignInForm 
-        handleSubmit={(data) => this.login(data)}
-        isFetching={isFetching}
-      />
+      <BoxCenter>
+        <Avatar>
+          <LockIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <SignInForm 
+          handleSubmit={(data) => this.login(data)}
+          isFetching={isFetching}
+        />
+        <p>Need an account? <Link to='/signup'>Sign up</Link></p>
+      </BoxCenter>
     )
   }
 }

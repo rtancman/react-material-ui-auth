@@ -43,7 +43,6 @@ class SignInForm extends Component {
         ref="form"
         onSubmit={this.handleSubmit}
       >
-        <h1>Sign In</h1>
         <TextValidator
           fullWidth
           label="Username"
@@ -66,7 +65,9 @@ class SignInForm extends Component {
           margin="normal"
         />
         <Button 
-          variant="contained" 
+          variant="contained"
+          fullWidth
+          color="primary"
           type="submit"
           disabled={isFetching}
           margin="normal"

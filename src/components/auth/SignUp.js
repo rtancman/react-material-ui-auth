@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SignUpForm from './SignUpForm'
+import Typography from '@material-ui/core/Typography';
+import SignUpForm from './form/SignUpForm'
 import { signUp } from './actions'
+import BoxCenter from './UI/box/Center'
+
 
 class SignUp extends Component {
   static propTypes = {
@@ -44,10 +47,16 @@ class SignUp extends Component {
     const { isFetching } = this.state
 
     return (
-      <SignUpForm 
-        handleSubmit={(user) => this.createUser(user)}
-        isFetching={isFetching}
-      />
+      <BoxCenter>
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography>
+        <SignUpForm 
+          handleSubmit={(user) => this.createUser(user)}
+          isFetching={isFetching}
+        />
+        <p>Already have an account? <Link to='/login'>Log in</Link></p>
+      </BoxCenter>
     )
   }
 }
